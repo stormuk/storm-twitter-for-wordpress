@@ -48,5 +48,5 @@ TODO
 Credits
 =======
 
-Uses Abraham Williams's Twitter OAuth class
+Uses Abraham Williams's Twitter OAuth class.
 
