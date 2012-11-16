@@ -1,11 +1,14 @@
 <?php
 /*
-Plugin Name: Twitter Feed for Wordpress Developers
-Plugin URI: https://github.com/lgladdy
-Description: A twitter API 1.1 compliant plugin that provides a function that returns a number of tweets from the auth'd users twitter feed as an array for wordpress (theme) developers to use in their themes.
-Author: Liam Gladdy
+Contributors: stormuk, lgladdy
+Donate link: http://www.stormconsultancy.co.uk/
+Tags: twitter, oauth, feed
+Requires at least: 3.4
+Tested up to: 3.5
+Stable tag: 1.0
 Version: 1.0
-Author URI: http://www.gladdy.co.uk
+License: MIT
+License URI: http://opensource.org/licenses/MIT
 */
 
 

@@ -35,12 +35,12 @@ function tdf_settings_output() {
 	
 		echo '<h2>Twitter Feed for Developers</h2>';
 		
-		echo '<p>This plugin requires five fields. Most of which are found on the application overview page on the <a href="dev.twitter.com">dev.twitter.com</a> website</p>';
-		echo '<p>When creating an application for this plugin, you don\'t need to set a callback location, and only need read access.</p>';
-		echo '<p>You will need to generate an oauth token once you\'ve created the application. The button for that is on the bottom of the application overview page.</p>';
-		echo '<p>The \'Twitter Feed Screen Name\' setting is the timeline you wish you load when you call the function getTweets(), such as @lgladdy</p>';
+		echo '<p>This plugin requires five fields. Most of which are found on the application overview page on the <a href="http://dev.twitter.com/apps">http://dev.twitter.com</a> website</p>';
+		echo '<p>When creating an application for this plugin, you don\'t need to set a callback location and you only need read access.</p>';
+		echo '<p>You will need to generate an oAuth token once you\'ve created the application. The button for that is on the bottom of the application overview page.</p>';
+		echo '<p>The \'Twitter Feed Screen Name\' setting is the timeline you wish you load when you call the function getTweets(), such as @stormuk</p>';
 		echo '<p>getTweets($limit = 20) takes an optional limit on the number of tweets, up to a maximum of 20, and has default of 20.</p>';
-		echo '<p>The format of the response from getTweets will either be an array of arrays containing tweet objects, as described on the official twitter documentation <a href="https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline">here</a>, or an 1D array containing an "error" key, with a value of the error that occurred.</p>';
+		echo '<p>The format of the response from getTweets will either be an array of arrays containing tweet objects, as described on the official Twitter documentation <a href="https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline">here</a>, or an 1D array containing an "error" key, with a value of the error that occurred.</p>';
 		
 		echo '<hr />';
 		
