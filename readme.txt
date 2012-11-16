@@ -1,5 +1,16 @@
-Storm Twitter Feed for WordPress
-================================
+=== Plugin Name ===
+Contributors: stormuk, lgladdy
+Donate link: http://www.stormconsultancy.co.uk/
+Tags: twitter, oauth, feed
+Requires at least: 3.4
+Tested up to: 3.5
+Stable tag: 1.0
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+
+A twitter API 1.1 compliant plugin that provides a function that returns a number of tweets from the auth'd users twitter feed as an array for wordpress (theme) developers to use in their themes.
+
+== Description ==
 
 A Twitter API 1.1 compliant wordpress plugin that provides an array of a users timeline from Twitter for use by theme developers.
 
@@ -11,8 +22,7 @@ This plugin wraps our Twitter class and provides a settings screen for easy inte
 
 This plugin does not provide sidebar widgets, shortcodes or any other form of drop-in functionality.  You still need to do the styling, we've just done the heavy lifting for you!
 
-Installation
-============
+== Installation ==
 
 Install the plugin using the plugin manager, or upload the files to your wp-content/plugins directory.
 
@@ -26,26 +36,25 @@ Now, anywhere in your theme files you can call the `getTweets()` function to ret
 
 You can then loop over the array and do whatever you want with it.
 
-    `<?php
-      $tweets = getTweets();
-      var_dump($tweets);
+`<?php
+  $tweets = getTweets();
+  var_dump($tweets);
 
-      foreach($tweets as $tweet){
-        var_dump($tweet);
-      }
-    ?>`
+  foreach($tweets as $tweet){
+    var_dump($tweet);
+  }
+?>`
 
 You can specify a number of tweets to return (up to 20) by passing a parameter to the function.  For example, to display just the latest tweet you'd request `getTweets(1)`
 
 Results are cached for 1 hour to help you avoid hitting the API limits.
 
-TODO
-====
+== TODO ==
 
 * Move the screen name from the settings page to a function parameter so you can use the plugin to request different timelines
 * Make the cache duration configurable
 
-Credits
-=======
+== Changelog ==
 
-Uses Abraham Williams's Twitter OAuth class
+= 1.0 =
+* First version
