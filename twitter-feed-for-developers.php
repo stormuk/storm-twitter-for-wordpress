@@ -1,14 +1,16 @@
 <?php
 /*
-Contributors: stormuk, lgladdy
-Donate link: http://www.stormconsultancy.co.uk/
-Tags: twitter, oauth, feed
-Requires at least: 3.4
-Tested up to: 3.5
-Stable tag: 1.0
-Version: 1.0
-License: MIT
-License URI: http://opensource.org/licenses/MIT
+ * Plugin Name: oAuth Twitter Feed for Developers
+ * Description: Twitter API 1.1 compliant plugin that provides a function to get an array of tweets from the auth'd users Twitter feed for use in themes.
+ * Contributors: stormuk, lgladdy
+ * Donate link: http://www.stormconsultancy.co.uk/
+ * Tags: twitter, oauth, feed
+ * Requires at least: 3.4
+ * Tested up to: 3.5
+ * Stable tag: 1.0
+ * Version: 1.0
+ * License: MIT
+ * License URI: http://opensource.org/licenses/MIT
 */
 
 
