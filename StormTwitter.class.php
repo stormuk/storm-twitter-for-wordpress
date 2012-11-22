@@ -69,7 +69,7 @@ class StormTwitter {
         unlink($file);
         return false;
       }
-      if ($cache['time'] < (time() - 1)) {
+      if ($cache['time'] < (time() - 3600)) {
         $result = $this->oauthGetTweets();
         if (!isset($result['errors'])) {
           return $result;
