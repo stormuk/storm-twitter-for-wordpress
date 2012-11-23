@@ -1,10 +1,11 @@
 === oAuth Twitter Feed for Developers ===
 Contributors: stormuk, lgladdy
 Donate link: http://www.stormconsultancy.co.uk/
-Tags: twitter, oauth, feed
+Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
 Tested up to: 3.5
-Stable tag: 1.0.2
+Stable tag: 1.0.5
+Version: 1.0.5
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -36,14 +37,14 @@ Now, anywhere in your theme files you can call the `getTweets()` function to ret
 
 You can then loop over the array and do whatever you want with it.
 
-`<?php
-  $tweets = getTweets();
-  var_dump($tweets);
+    `<?php
+      $tweets = getTweets();
+      var_dump($tweets);
 
-  foreach($tweets as $tweet){
-    var_dump($tweet);
-  }
-?>`
+      foreach($tweets as $tweet){
+        var_dump($tweet);
+      }
+    ?>`
 
 You can specify a number of tweets to return (up to 20) by passing a parameter to the function.  For example, to display just the latest tweet you'd request `getTweets(1)`
 
@@ -54,7 +55,49 @@ Results are cached for 1 hour to help you avoid hitting the API limits.
 * Move the screen name from the settings page to a function parameter so you can use the plugin to request different timelines
 * Make the cache duration configurable
 
+== Credits ==
+
+Uses Abraham Williams's Twitter OAuth class.
+
+== About ==
+
+Version: 1.0.5
+
+Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
+
+Storm Consultancy are a web design and development agency based in Bath, UK.
+
+If you are looking for a [Bath WordPress Developer](http://www.stormconsultancy.co.uk/services/bath-wordpress-developers), then [get in touch](http://www.stormconsultancy.co.uk/contact)!
+
+== License ==
+
+Copyright (c) 2012 Storm Consultancy (EU) Ltd, 
+<http://www.stormconsultancy.co.uk/>
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 == Changelog ==
+
+= 1.0.4 =
+* Make the plugin actually work properly!
+* Correct documentation files for inclusion by wordpress
 
 = 1.0 =
 * First version

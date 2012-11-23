@@ -1,17 +1,5 @@
-=== Storm Twitter Feed for WordPress ===
-Contributors: stormuk, lgladdy
-Donate link: http://www.stormconsultancy.co.uk/
-Tags: twitter, oauth, feed, tweets
-Requires at least: 3.4
-Tested up to: 3.5
-Stable tag: 1.0.4
-Version: 1.0.4
-License: MIT
-License URI: http://opensource.org/licenses/MIT
-
-Twitter API 1.1 compliant plugin that provides a function to get an array of tweets from the auth'd users Twitter feed for use in themes.
-
-== Description ==
+Storm Twitter Feed for WordPress
+================================
 
 A Twitter API 1.1 compliant wordpress plugin that provides an array of a users timeline from Twitter for use by theme developers.
 
@@ -23,7 +11,8 @@ This plugin wraps our Twitter class and provides a settings screen for easy inte
 
 This plugin does not provide sidebar widgets, shortcodes or any other form of drop-in functionality.  You still need to do the styling, we've just done the heavy lifting for you!
 
-== Installation ==
+Installation
+============
 
 Install the plugin using the plugin manager, or upload the files to your wp-content/plugins directory.
 
@@ -50,18 +39,21 @@ You can specify a number of tweets to return (up to 20) by passing a parameter t
 
 Results are cached for 1 hour to help you avoid hitting the API limits.
 
-== TODO ==
+TODO
+====
 
 * Move the screen name from the settings page to a function parameter so you can use the plugin to request different timelines
 * Make the cache duration configurable
 
-== Credits ==
+Credits
+=======
 
 Uses Abraham Williams's Twitter OAuth class.
 
-== About ==
+About
+=====
 
-Version: 1.0.4
+Version: 1.0.5
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -69,7 +61,8 @@ Storm Consultancy are a web design and development agency based in Bath, UK.
 
 If you are looking for a [Bath WordPress Developer](http://www.stormconsultancy.co.uk/services/bath-wordpress-developers), then [get in touch](http://www.stormconsultancy.co.uk/contact)!
 
-== License ==
+License
+=======
 
 Copyright (c) 2012 Storm Consultancy (EU) Ltd, 
 <http://www.stormconsultancy.co.uk/>
@@ -92,9 +85,3 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-== Changelog ==
-
-= 1.0.4 =
-* Make the plugin actually work properly!
-* Correct documentation files for inclusion by wordpress
