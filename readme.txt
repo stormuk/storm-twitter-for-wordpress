@@ -61,7 +61,7 @@ Uses Abraham Williams's Twitter OAuth class.
 
 == About ==
 
-Version: 1.0.4
+Version: 1.0.5
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -98,7 +98,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 = 1.0.4 =
 * Make the plugin actually work properly!
 * Correct documentation files for inclusion by wordpress
-
 
 = 1.0 =
 * First version
