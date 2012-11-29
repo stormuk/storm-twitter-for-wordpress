@@ -4,8 +4,8 @@ Donate link: http://www.stormconsultancy.co.uk/
 Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
 Tested up to: 3.5
-Stable tag: 1.0.5
-Version: 1.0.5
+Stable tag: 1.0.6
+Version: 1.0.6
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
