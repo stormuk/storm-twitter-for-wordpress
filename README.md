@@ -39,6 +39,13 @@ You can specify a number of tweets to return (up to 20) by passing a parameter t
 
 Results are cached for 1 hour to help you avoid hitting the API limits.
 
+Output
+======
+
+As we said, this plugin does not provide sidebar widgets, shortcodes or any other form of drop-in functionality.  Here's some example code for outputting the tweets in HTML:
+
+https://github.com/stormuk/storm-twitter-for-wordpress/wiki/Example-code-to-layout-tweets
+
 TODO
 ====
 

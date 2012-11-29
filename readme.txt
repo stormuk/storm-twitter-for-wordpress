@@ -23,6 +23,10 @@ This plugin wraps our Twitter class and provides a settings screen for easy inte
 
 This plugin does not provide sidebar widgets, shortcodes or any other form of drop-in functionality.  You still need to do the styling, we've just done the heavy lifting for you!
 
+Here's some example code for outputting the tweets in HTML:
+
+https://github.com/stormuk/storm-twitter-for-wordpress/wiki/Example-code-to-layout-tweets
+
 == Installation ==
 
 Install the plugin using the plugin manager, or upload the files to your wp-content/plugins directory.
