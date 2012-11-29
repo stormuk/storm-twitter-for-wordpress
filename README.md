@@ -53,7 +53,7 @@ Uses Abraham Williams's Twitter OAuth class.
 About
 =====
 
-Version: 1.0
+Version: 1.0.5
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
