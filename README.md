@@ -1,7 +1,7 @@
 Storm Twitter Feed for WordPress
 ================================
 
-A Twitter API 1.1 compliant wordpress plugin that provides an array of a users timeline from Twitter for use by theme developers.
+Twitter API 1.1 compliant plugin that provides a single function for getting an array of a twitter timeline for use by theme developers.
 
 The new Twitter API requires you be oAuth'd before you can request a list of tweets, this means that all of the existing Twitter plugins that simply make an AJAX request for to the JSON API endpoint will break as of March 2013. 
 
@@ -27,7 +27,7 @@ Now, anywhere in your theme files you can call the `getTweets()` function to ret
 You can then loop over the array and do whatever you want with it.
 
     `<?php
-      $tweets = getTweets();
+      $tweets = getTweets($number_of_tweets, $twitter_screenname_to_load, $optional_array_of_any_additional_twitter_api_parameters);
       var_dump($tweets);
 
       foreach($tweets as $tweet){
@@ -37,7 +37,13 @@ You can then loop over the array and do whatever you want with it.
 
 You can specify a number of tweets to return (up to 20) by passing a parameter to the function.  For example, to display just the latest tweet you'd request `getTweets(1)`
 
-Results are cached for 1 hour to help you avoid hitting the API limits.
+The following default options are used unless you override them in the optional array of additional parameters.
+
+* Trim the user object ("trim_user" => true)
+* Exclude replies ("exclude_replies" => true)
+* Exclude retweets ("include_rts" => false)
+
+Results are cached for 1 hour (by default) to help you avoid hitting the API limits.
 
 Output
 ======
@@ -45,12 +51,6 @@ Output
 As we said, this plugin does not provide sidebar widgets, shortcodes or any other form of drop-in functionality.  Here's some example code for outputting the tweets in HTML:
 
 https://github.com/stormuk/storm-twitter-for-wordpress/wiki/Example-code-to-layout-tweets
-
-TODO
-====
-
-* Move the screen name from the settings page to a function parameter so you can use the plugin to request different timelines
-* Make the cache duration configurable
 
 Credits
 =======
@@ -60,7 +60,7 @@ Uses Abraham Williams's Twitter OAuth class.
 About
 =====
 
-Version: 1.0.5
+Version: 2.0
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -71,7 +71,7 @@ If you are looking for a [Bath WordPress Developer](http://www.stormconsultancy.
 License
 =======
 
-Copyright (c) 2012 Storm Consultancy (EU) Ltd, 
+Copyright (c) 2013 Storm Consultancy (EU) Ltd, 
 <http://www.stormconsultancy.co.uk/>
 
 Permission is hereby granted, free of charge, to any person obtaining

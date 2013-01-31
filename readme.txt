@@ -4,12 +4,12 @@ Donate link: http://www.stormconsultancy.co.uk/
 Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
 Tested up to: 3.5
-Stable tag: 1.0.6
-Version: 1.0.6
+Stable tag: 2.0
+Version: 2.0
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
-Twitter API 1.1 compliant plugin that provides a function to get an array of tweets from the auth'd users Twitter feed for use in themes.
+Twitter API 1.1 compliant plugin that provides a single function for getting an array of a twitter timeline for use by theme developers.
 
 == Description ==
 
@@ -42,7 +42,7 @@ Now, anywhere in your theme files you can call the `getTweets()` function to ret
 You can then loop over the array and do whatever you want with it.
 
     `<?php
-      $tweets = getTweets();
+      $tweets = getTweets($number_of_tweets, $twitter_screenname_to_load, $optional_array_of_any_additional_twitter_api_parameters);
       var_dump($tweets);
 
       foreach($tweets as $tweet){
@@ -52,12 +52,13 @@ You can then loop over the array and do whatever you want with it.
 
 You can specify a number of tweets to return (up to 20) by passing a parameter to the function.  For example, to display just the latest tweet you'd request `getTweets(1)`
 
-Results are cached for 1 hour to help you avoid hitting the API limits.
+The following default options are used unless you override them in the optional array of additional parameters.
 
-== TODO ==
+* Trim the user object ("trim_user" => true)
+* Exclude replies ("exclude_replies" => true)
+* Exclude retweets ("include_rts" => false)
 
-* Move the screen name from the settings page to a function parameter so you can use the plugin to request different timelines
-* Make the cache duration configurable
+Results are cached for 1 hour (by default) to help you avoid hitting the API limits.
 
 == Credits ==
 
@@ -65,7 +66,7 @@ Uses Abraham Williams's Twitter OAuth class.
 
 == About ==
 
-Version: 1.0.5
+Version: 2.0
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -75,7 +76,7 @@ If you are looking for a [Bath WordPress Developer](http://www.stormconsultancy.
 
 == License ==
 
-Copyright (c) 2012 Storm Consultancy (EU) Ltd, 
+Copyright (c) 2013 Storm Consultancy (EU) Ltd, 
 <http://www.stormconsultancy.co.uk/>
 
 Permission is hereby granted, free of charge, to any person obtaining
@@ -98,6 +99,11 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 == Changelog ==
+
+= 2.0.0 =
+* Support multiple screennames
+* Support additional parameters to pass on to twitter (for excluding RTs, etc)
+* Support custom cache expiry
 
 = 1.0.4 =
 * Make the plugin actually work properly!
