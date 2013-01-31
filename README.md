@@ -60,7 +60,7 @@ Uses Abraham Williams's Twitter OAuth class.
 About
 =====
 
-Version: 2.0.2
+Version: 2.0.3
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 

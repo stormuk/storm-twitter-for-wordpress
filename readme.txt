@@ -4,8 +4,8 @@ Donate link: http://www.stormconsultancy.co.uk/
 Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
 Tested up to: 3.5
-Stable tag: 2.0.2
-Version: 2.0.2
+Stable tag: 2.0.3
+Version: 2.0.3
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -66,7 +66,7 @@ Uses Abraham Williams's Twitter OAuth class.
 
 == About ==
 
-Version: 2.0.2
+Version: 2.0.3
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -99,6 +99,9 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 == Changelog ==
+
+= 2.0.3 =
+* Further defensive code against twitter abnormalities 
 
 = 2.0.2 =
 * Be a touch more graceful when Twitter is down or returning invalid data.
