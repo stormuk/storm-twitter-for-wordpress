@@ -1,7 +1,7 @@
 Storm Twitter Feed for WordPress
 ================================
 
-Twitter API 1.1 compliant plugin that provides a single function for getting an array of a twitter timeline for use by theme developers.
+A Twitter API 1.1 compliant wordpress plugin that provides an array of a users timeline from Twitter for use by theme developers.
 
 The new Twitter API requires you be oAuth'd before you can request a list of tweets, this means that all of the existing Twitter plugins that simply make an AJAX request for to the JSON API endpoint will break as of March 2013. 
 
@@ -60,7 +60,7 @@ Uses Abraham Williams's Twitter OAuth class.
 About
 =====
 
-Version: 2.0
+Version: 2.0.2
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 

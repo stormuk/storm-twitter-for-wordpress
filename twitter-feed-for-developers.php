@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: oAuth Twitter Feed for Developers
-Description: Twitter API 1.1 compliant plugin that provides a single function for getting an array of a twitter timeline for use by theme developers.
-Version: 2.0
+Description: Twitter API 1.1 compliant plugin that provides a function to get an array of tweets from the auth'd users Twitter feed for use in themes.
+Version: 2.0.2
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 Author: Storm Consultancy (Liam Gladdy)
