@@ -27,7 +27,7 @@ Now, anywhere in your theme files you can call the `getTweets()` function to ret
 You can then loop over the array and do whatever you want with it.
 
     `<?php
-      $tweets = getTweets($number_of_tweets, $twitter_screenname_to_load, $optional_array_of_any_additional_twitter_api_parameters);
+      $tweets = getTweets($twitter_screenname_to_load, $number_of_tweets, $optional_array_of_any_additional_twitter_api_parameters);
       var_dump($tweets);
 
       foreach($tweets as $tweet){
@@ -60,7 +60,7 @@ Uses Abraham Williams's Twitter OAuth class.
 About
 =====
 
-Version: 2.0.3
+Version: 2.1
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
