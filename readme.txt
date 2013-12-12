@@ -5,7 +5,7 @@ Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
 Tested up to: 3.5
 Stable tag: 2.0.3
-Version: 2.0.3
+Version: 2.0.4
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -21,9 +21,7 @@ This is a major problem for the vast majority of websites that are currently usi
 
 This plugin wraps our Twitter class and provides a settings screen for easy integration into WordPress.  However, it's definitely for developers - you only get a PHP array out of it that contains Twitter tweet objects. You'll still need to style the output and make it comply with the new display requirements.
 
-This plugin does not provide sidebar widgets, shortcodes or any other form of drop-in functionality.  You still need to do the styling, we've just done the heavy lifting for you!
 
-Here's some example code for outputting the tweets in HTML:
 
 https://github.com/stormuk/storm-twitter-for-wordpress/wiki/Example-code-to-layout-tweets
 
@@ -99,6 +97,10 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 == Changelog ==
+=2.0.4+
+add widget
+add shortcode which can be used as follows:
+[twitterfeed limit="2" username="usename"]
 
 = 2.0.3 =
 * Further defensive code against twitter abnormalities 
