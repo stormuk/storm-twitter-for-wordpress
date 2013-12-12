@@ -4,8 +4,8 @@ Donate link: http://www.stormconsultancy.co.uk/
 Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
 Tested up to: 3.8
-Stable tag: 2.1.0
-Version: 2.1.0
+Stable tag: 2.1.2
+Version: 2.1.2
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -66,7 +66,7 @@ Uses Abraham Williams's Twitter OAuth class.
 
 == About ==
 
-Version: 2.1
+Version: 2.1.1
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -99,6 +99,12 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 == Changelog ==
+
+= 2.1.2 =
+* Just a version bump - I'm the worst at remembering to update all the right places.
+
+= 2.1.1 =
+* Add support for a proxy server, as defined in wp-settings.php (Thanks, josmeer)
 
 = 2.1 =
 * Change default and prefered method of calling to username, then count (For backwards compatibility, both will work)
