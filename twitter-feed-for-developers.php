@@ -2,7 +2,7 @@
 /*
 Plugin Name: oAuth Twitter Feed for Developers
 Description: Twitter API 1.1 compliant plugin that provides a function to get an array of tweets from the auth'd users Twitter feed for use in themes.
-Version: 2.0.3
+Version: 2.1
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 Author: Storm Consultancy (Liam Gladdy)
@@ -14,7 +14,7 @@ require('StormTwitter.class.php');
 require('twitter-feed-for-developers-settings.php');
 
 /* implement getTweets */
-function getTweets($count = 20, $username = false, $options = false) {
+function getTweets($username = false, $count = 20, $options = false) {
 
   $config['key'] = get_option('tdf_consumer_key');
   $config['secret'] = get_option('tdf_consumer_secret');

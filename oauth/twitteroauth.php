@@ -7,7 +7,8 @@
  */
 
 /* Load OAuth lib. You can find it at http://oauth.net */
-require_once('OAuth.php');
+// This is a pretty scary fix, but many people already load OAuth libraries, so, lets see if OAuthRequest is already defined. If it is, lets not bother loading...
+if (!class_exists('OAuthRequest')) require_once('OAuth.php');
 
 /**
  * Twitter OAuth class
@@ -206,12 +207,6 @@ class TwitterOAuth {
     curl_setopt($ci, CURLOPT_SSL_VERIFYPEER, $this->ssl_verifypeer);
     curl_setopt($ci, CURLOPT_HEADERFUNCTION, array($this, 'getHeader'));
     curl_setopt($ci, CURLOPT_HEADER, FALSE);
-    if (defined('WP_PROXY_HOST')){
-        curl_setopt($ci, CURLOPT_PROXY, WP_PROXY_HOST);
-    }
-    if (defined('WP_PROXY_PORT')){
-        curl_setopt($ci, CURLOPT_PROXYPORT, WP_PROXY_PORT);
-    }
 
     switch ($method) {
       case 'POST':

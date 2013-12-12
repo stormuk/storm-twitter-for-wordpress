@@ -1,6 +1,6 @@
 <?php
 /*
-* Version 2.0.3
+* Version 2.1
 * The base class for the storm twitter feed for developers.
 * This class provides all the things needed for the wordpress plugin, but in theory means you don't need to use it with wordpress.
 * What could go wrong?
@@ -30,8 +30,12 @@ class StormTwitter {
     return print_r($this->defaults, true);
   }
   
-  //I'd prefer to put username before count, but for backwards compatibility it's not really viable. :(
-  function getTweets($count = 20,$screenname = false,$options = false) {  
+  function getTweets($screenname = false,$count = 20,$options = false) {
+    // BC: $count used to be the first argument
+    if (is_int($screenname)) {
+      list($screenname, $count) = array($count, $screenname);
+    }
+    
     if ($count > 20) $count = 20;
     if ($count < 1) $count = 1;
     
@@ -54,15 +58,20 @@ class StormTwitter {
     //If we're here, we need to load.
     $result = $this->oauthGetTweets($screenname,$options);
     
-    if (isset($result['errors'])) {
-      if (is_array($results) && isset($result['errors'][0]) && isset($result['errors'][0]['message'])) {
+    if (is_array($result) && isset($result['errors'])) {
+      if (is_array($result) && isset($result['errors'][0]) && isset($result['errors'][0]['message'])) {
         $last_error = $result['errors'][0]['message'];
       } else {
         $last_error = $result['errors'];
       }
-      return array('error'=>'Twitter said: '.$last_error);
+      return array('error'=>'Twitter said: '.json_encode($last_error));
     } else {
-      return $this->cropTweets($result,$count);
+      if (is_array($result)) {
+        return $this->cropTweets($result,$count);
+      } else {
+        $last_error = 'Something went wrong with the twitter request: '.json_encode($result);
+        return array('error'=>$last_error);
+      }
     }
     
   }

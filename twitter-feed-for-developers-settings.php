@@ -39,7 +39,7 @@ function tdf_settings_output() {
 		echo '<p>Most of this configuration can found on the application overview page on the <a href="http://dev.twitter.com/apps">http://dev.twitter.com</a> website.</p>';
 		echo '<p>When creating an application for this plugin, you don\'t need to set a callback location and you only need read access.</p>';
 		echo '<p>You will need to generate an oAuth token once you\'ve created the application. The button for that is on the bottom of the application overview page.</p>';
-		echo '<p>Once configured, you then need to call getTweets() anywhere in your template. getTweets supports 3 parameters - the number of tweets to load (max 20), the username of the twitter feed you want to load, and any additional parameters you want to send to Twitter. An example code usage is shown under the debug information below.</p>';
+		echo '<p>Once configured, you then need to call getTweets() anywhere in your template. getTweets supports 3 parameters - the username of the twitter feed you want to load, the number of tweets to load (max 20), and any additional parameters you want to send to Twitter. An example code usage is shown under the debug information below.</p>';
 		echo '<p>The format of the response from getTweets will either be an array of arrays containing tweet objects, as described on the official Twitter documentation <a href="https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline">here</a>, or an 1D array containing an "error" key, with a value of the error that occurred.</p>';
 		
 		echo '<hr />';

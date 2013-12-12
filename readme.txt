@@ -3,7 +3,7 @@ Contributors: stormuk, lgladdy
 Donate link: http://www.stormconsultancy.co.uk/
 Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
-Tested up to: 3.5
+Tested up to: 3.8
 Stable tag: 2.0.3
 Version: 2.0.3
 License: MIT
@@ -66,7 +66,7 @@ Uses Abraham Williams's Twitter OAuth class.
 
 == About ==
 
-Version: 2.0.3
+Version: 2.1
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -99,6 +99,11 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 == Changelog ==
+
+= 2.1 =
+* Change default and prefered method of calling to username, then count (For backwards compatibility, both will work)
+* Only include OAuth if an OAuthRequest class isn't already defined. This should stop some errors some folks have with other plugins.
+
 
 = 2.0.3 =
 * Further defensive code against twitter abnormalities 
