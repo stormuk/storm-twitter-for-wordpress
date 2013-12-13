@@ -4,8 +4,8 @@ Donate link: http://www.stormconsultancy.co.uk/
 Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
 Tested up to: 3.8
-Stable tag: 2.1.2
-Version: 2.1.2
+Stable tag: 2.1.3
+Version: 2.1.3
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -66,7 +66,7 @@ Uses Abraham Williams's Twitter OAuth class.
 
 == About ==
 
-Version: 2.1.1
+Version: 2.1.3
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -99,6 +99,9 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 == Changelog ==
+
+= 2.1.3 =
+* Fixes 2.1 for people using the very old getTweets($int) syntax. You should still change to the new version, but this will at least not be broken!
 
 = 2.1.2 =
 * Just a version bump - I'm the worst at remembering to update all the right places.

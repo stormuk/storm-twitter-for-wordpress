@@ -56,7 +56,7 @@ function tdf_settings_output() {
 				echo '</tr>';
 				if ($setting['name'] == 'tdf_user_timeline') {
   				echo '<tr>';
-  				  echo '<td colspan="2" style="font-size:10px; font-style: italic">This option is no longer required. You may define the screen name to load as part of the getTweets() call as detailed above.</td>';
+  				  echo '<td colspan="2" style="font-size:10px; font-style: italic">This option is no longer required and is deprecated. You should define the screen name to load as part of the getTweets() call as detailed above.</td>';
   				echo '</tr>';
 				}
 			}

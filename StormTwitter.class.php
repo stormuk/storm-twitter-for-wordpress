@@ -1,6 +1,6 @@
 <?php
 /*
-* Version 2.1
+* Version 2.1.3
 * The base class for the storm twitter feed for developers.
 * This class provides all the things needed for the wordpress plugin, but in theory means you don't need to use it with wordpress.
 * What could go wrong?
@@ -47,7 +47,7 @@ class StormTwitter {
       $options = array_merge($default_options, $options);
     }
     
-    if ($screenname === false) $screenname = $this->defaults['screenname'];
+    if ($screenname === false || $screenname === 20) $screenname = $this->defaults['screenname'];
   
     $result = $this->checkValidCache($screenname,$options);
     
