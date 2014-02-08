@@ -1,12 +1,17 @@
 <?php
 /*
-* Version 2.1.3
+* Version 2.2.0
 * The base class for the storm twitter feed for developers.
 * This class provides all the things needed for the wordpress plugin, but in theory means you don't need to use it with wordpress.
 * What could go wrong?
 */
 
-require_once('oauth/twitteroauth.php');
+
+if (!class_exists('TwitterOAuth')) {
+  require_once('oauth/twitteroauth.php');
+} else {
+  define('TFD_USING_EXISTING_LIBRARY_TWITTEROAUTH',true);
+}
 
 class StormTwitter {
 

@@ -3,9 +3,9 @@ Storm Twitter Feed for WordPress
 
 A Twitter API 1.1 compliant wordpress plugin that provides an array of a users timeline from Twitter for use by theme developers.
 
-The new Twitter API requires you be oAuth'd before you can request a list of tweets, this means that all of the existing Twitter plugins that simply make an AJAX request for to the JSON API endpoint will break as of March 2013. 
+The new Twitter API requires you be oAuth'd before you can request a list of tweets, this means that all of the existing Twitter plugins that simply make an AJAX request for to the JSON API endpoint broke in March 2013. 
 
-This is a major problem for the vast majority of websites that are currently using twitter, so we built a PHP class that implements all the new requirements for authentication and gives you an array of tweets out of the other end, for you to use in your PHP applications, or WordPress theme.  You can find the stand-alone [StormTwitter](https://github.com/stormuk/storm-twitter) class on GitHub
+This was a major problem for the vast majority of websites that are currently using twitter, so we built a PHP class that implements all the new requirements for authentication and gives you an array of tweets out of the other end, for you to use in your PHP applications, or WordPress theme.  You can find the stand-alone [StormTwitter](https://github.com/stormuk/storm-twitter) class on GitHub
 
 This plugin wraps our Twitter class and provides a settings screen for easy integration into WordPress.  However, it's definitely for developers - you only get a PHP array out of it that contains Twitter tweet objects. You'll still need to style the output and make it comply with the new display requirements.
 
@@ -60,7 +60,7 @@ Uses Abraham Williams's Twitter OAuth class.
 About
 =====
 
-Version: 2.1.3
+Version: 2.2.0
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -71,7 +71,7 @@ If you are looking for a [Bath WordPress Developer](http://www.stormconsultancy.
 License
 =======
 
-Copyright (c) 2013 Storm Consultancy (EU) Ltd, 
+Copyright (c) 2014 Storm Consultancy (EU) Ltd, 
 <http://www.stormconsultancy.co.uk/>
 
 Permission is hereby granted, free of charge, to any person obtaining
