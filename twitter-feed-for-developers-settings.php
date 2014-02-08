@@ -12,8 +12,8 @@ function tdf_menu() {
 
 function tdf_settings() {
 	$tdf = array();
-	$tdf[] = array('name'=>'tdf_consumer_key','label'=>'Twitter Application Consumer Key');
-	$tdf[] = array('name'=>'tdf_consumer_secret','label'=>'Twitter Application Consumer Secret');
+	$tdf[] = array('name'=>'tdf_consumer_key','label'=>'Twitter Application API Key');
+	$tdf[] = array('name'=>'tdf_consumer_secret','label'=>'Twitter Application API Secret');
 	$tdf[] = array('name'=>'tdf_access_token','label'=>'Account Access Token');
 	$tdf[] = array('name'=>'tdf_access_token_secret','label'=>'Account Access Token Secret');
 	$tdf[] = array('name'=>'tdf_cache_expire','label'=>'Cache Duration (Default 3600)');

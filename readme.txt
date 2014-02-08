@@ -76,7 +76,7 @@ If you are looking for a [Bath WordPress Developer](http://www.stormconsultancy.
 
 == License ==
 
-Copyright (c) 2014 Storm Consultancy (EU) Ltd, 
+Copyright (c) 2014 Storm Consultancy (EU) Ltd and Liam Gladdy, 
 <http://www.stormconsultancy.co.uk/>
 
 Permission is hereby granted, free of charge, to any person obtaining
