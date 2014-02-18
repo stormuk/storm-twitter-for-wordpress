@@ -4,8 +4,8 @@ Donate link: http://www.stormconsultancy.co.uk/
 Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
 Tested up to: 3.8
-Stable tag: 2.2.0
-Version: 2.2.0
+Stable tag: 2.2.1
+Version: 2.2.1
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -66,7 +66,7 @@ Uses Abraham Williams's Twitter OAuth class.
 
 == About ==
 
-Version: 2.2.0
+Version: 2.2.1
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -99,6 +99,9 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 == Changelog ==
+
+= 2.2.1 =
+* Grah! Fixes a fairly major issue where if not loading from a cache, the tweet cache is an object, rather than an array. This should be configurable (maybe in 2.3), but for now - fix it. 
 
 = 2.2.0 =
 * Check if any of our libraries are loaded by other plugins. If so, don't load them and produce a warning in our settings. This will prevent fatal errors when any other plugin uses OAuth or TwitterOAuth.
