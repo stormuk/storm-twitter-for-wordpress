@@ -82,7 +82,12 @@ class StormTwitter {
   }
   
   private function cropTweets($result,$count) {
-    return array_slice($result, 0, $count);
+   if(!empty($result)){
+      return array_slice($result, 0, $count); 
+   }else{
+     return array();
+   }
+    
   }
   
   private function getCacheLocation() {
