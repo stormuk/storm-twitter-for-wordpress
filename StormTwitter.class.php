@@ -114,6 +114,35 @@ class StormTwitter {
     }
   }
   
+  function getTweetById($id) {
+    
+    $options = array("id"=>$id);
+    $result = $this->checkValidCache("ID",$options);
+      
+    if ($result !== false) {
+        return $result;
+    }
+      
+    //if we're here, we need to load.
+    $result = $this->oauthGetTweetById($options);
+      
+    if (is_array($result) && isset($result['errors'])) {
+      if (is_array($result) && isset($result['errors'][0]) && isset($result['errors'][0]['message'])) {
+        $last_error = $result['errors'][0]['message'];
+      } else {
+        $last_error = $result['errors'];
+      }
+      return array('error'=>'Twitter said: '.json_encode($last_error));
+    } else {
+      if (is_array($result)) {
+        return $result;
+      } else {
+        $last_error = 'Something went wrong with the twitter request: '.json_encode($result);
+        return array('error'=>$last_error);
+      }
+    }
+ }
+  
   private function cropTweets($result,$count) {
    if(!empty($result)){
       return array_slice($result, 0, $count); 
@@ -246,4 +275,45 @@ class StormTwitter {
     }
     
     return $result;
-  }}
+  }
+  
+  private function oauthGetTweetById($options) {
+    $key = $this->defaults['key'];
+    $secret = $this->defaults['secret'];
+    $token = $this->defaults['token'];
+    $token_secret = $this->defaults['token_secret'];
+    
+    $cachename = "ID-".$this->getOptionsHash($options);
+    
+    if (empty($key)) return array('error'=>'Missing Consumer Key - Check Settings');
+    if (empty($secret)) return array('error'=>'Missing Consumer Secret - Check Settings');
+    if (empty($token)) return array('error'=>'Missing Access Token - Check Settings');
+    if (empty($token_secret)) return array('error'=>'Missing Access Token Secret - Check Settings');
+    
+    $connection = new TwitterOAuth($key, $secret, $token, $token_secret);
+    $result = $connection->get('statuses/show', $options);
+    
+    if (is_file($this->getCacheLocation())) {
+      $cache = json_decode(file_get_contents($this->getCacheLocation()),true);
+    }
+    
+    if (!isset($result['errors'])) {
+      $cache[$cachename]['time'] = time();
+      $cache[$cachename]['tweets'] = $result;
+      $file = $this->getCacheLocation();
+      file_put_contents($file,json_encode($cache));
+    } else {
+      if (is_array($results) && isset($result['errors'][0]) && isset($result['errors'][0]['message'])) {
+        $last_error = '['.date('r').'] Twitter error: '.$result['errors'][0]['message'];
+        $this->st_last_error = $last_error;
+      } else {
+        $last_error = '['.date('r').'] Twitter returned an invalid response. It is probably down.';
+        $this->st_last_error = $last_error;
+      }
+    }
+    
+    return $result;
+    
+  }
+  
+}

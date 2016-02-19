@@ -41,3 +41,8 @@ function getTweets($username = false, $count = 20, $options = false) {
 function searchTweets($count = 20, $options = false) {
   return requestTweets('searchTweets', array($count, $options));
 }
+
+/* implement getTweetById */
+function getTweetById($id) {
+   return requestTweets('getTweetById', array($id));
+}
