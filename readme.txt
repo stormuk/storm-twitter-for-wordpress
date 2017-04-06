@@ -1,11 +1,11 @@
 === oAuth Twitter Feed for Developers ===
-Contributors: stormuk, lgladdy
-Donate link: http://www.stormconsultancy.co.uk/
+Contributors: lgladdy, stormuk
+Donate link: https://stormconsultancy.co.uk
 Tags: twitter, oauth, feed, tweets
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 2.2.1
-Version: 2.2.1
+Tested up to: 4.7.3
+Stable tag: 2.3.0
+Version: 2.3.0
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -66,18 +66,18 @@ Uses Abraham Williams's Twitter OAuth class.
 
 == About ==
 
-Version: 2.2.1
+Version: 2.3.0
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
 Storm Consultancy are a web design and development agency based in Bath, UK.
 
-If you are looking for a [Bath WordPress Developer](http://www.stormconsultancy.co.uk/services/bath-wordpress-developers), then [get in touch](http://www.stormconsultancy.co.uk/contact)!
+If you are looking for a [Bath WordPress Developer](http://www.stormconsultancy.co.uk), then [get in touch](http://www.stormconsultancy.co.uk/contact)!
 
 == License ==
 
-Copyright (c) 2014 Storm Consultancy (EU) Ltd and Liam Gladdy, 
-<http://www.stormconsultancy.co.uk/>
+Copyright (c) 2016 Liam Gladdy and Storm Consultancy (EU) Ltd, 
+<https://gladdy.uk/>, <http://www.stormconsultancy.co.uk/>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -99,6 +99,9 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 == Changelog ==
+
+= 2.3.0 =
+* Support for WordPress's new internationalization system.
 
 = 2.2.1 =
 * Grah! Fixes a fairly major issue where if not loading from a cache, the tweet cache is an object, rather than an array. This should be configurable (maybe in 2.3), but for now - fix it. 

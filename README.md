@@ -60,7 +60,7 @@ Uses Abraham Williams's Twitter OAuth class.
 About
 =====
 
-Version: 2.2.1
+Version: 2.3.0
 
 Written by Liam Gladdy of Storm Consultancy - <http://www.stormconsultancy.co.uk>
 
@@ -71,7 +71,7 @@ If you are looking for a [Bath WordPress Developer](http://www.stormconsultancy.
 License
 =======
 
-Copyright (c) 2014 Storm Consultancy (EU) Ltd and Liam Gladdy, 
+Copyright (c) 2016 Storm Consultancy (EU) Ltd and Liam Gladdy, 
 <http://www.stormconsultancy.co.uk/>
 
 Permission is hereby granted, free of charge, to any person obtaining
