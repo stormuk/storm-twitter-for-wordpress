@@ -81,11 +81,26 @@ function tdf_settings_output() {
 
 		echo '<table>';
 			foreach($settings as $setting) {
+        $setting_value = get_option($setting['name']);
+
 				echo '<tr>';
 					echo '<td>'.$setting['label'].'</td>';
-					echo '<td><input type="text" style="width: 400px" name="'.$setting['name'].'" value="'.get_option($setting['name']).'" /></td>';
+					echo '<td>';
+            echo '<input type="text" style="width: 400px" name="'.$setting['name'].'" value="'.$setting_value.'" />';
+          echo '</td>';
 				echo '</tr>';
-				if ($setting['name'] == 'tdf_user_timeline') {
+
+        // If a cache directory has been specified, verify it exists
+        if ($setting['name'] == 'tdf_cache_file_location' && !file_exists($setting_value) ) {
+  				echo '<tr>';
+            echo '<td></td>';
+  				  echo '<td style="font-size:10px; font-style: italic; color: red;">';
+  				  echo __('The supplied directory path does not exist.','oauth-twitter-feed-for-developers');
+            echo '</td>';
+  				echo '</tr>';
+				}
+
+        if ($setting['name'] == 'tdf_user_timeline') {
   				echo '<tr>';
   				  echo '<td colspan="2" style="font-size:10px; font-style: italic">';
   				  echo __('This option is no longer required and is deprecated. You should define the screen name to load as part of the getTweets() call as detailed above.','oauth-twitter-feed-for-developers');
