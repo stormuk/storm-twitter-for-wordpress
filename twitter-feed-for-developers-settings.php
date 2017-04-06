@@ -95,7 +95,7 @@ function tdf_settings_output() {
   				echo '<tr>';
             echo '<td></td>';
   				  echo '<td style="font-size:10px; font-style: italic; color: red;">';
-  				  echo __('The supplied directory path does not exist.','oauth-twitter-feed-for-developers');
+  				  echo __('The above directory path does not exist.','oauth-twitter-feed-for-developers');
             echo '</td>';
   				echo '</tr>';
 				}
