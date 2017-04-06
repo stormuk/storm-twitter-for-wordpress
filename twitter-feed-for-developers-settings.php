@@ -17,7 +17,7 @@ function tdf_settings() {
 	$tdf[] = array('name'=>'tdf_access_token','label'=>__('Account Access Token','oauth-twitter-feed-for-developers'));
 	$tdf[] = array('name'=>'tdf_access_token_secret','label'=>__('Account Access Token Secret','oauth-twitter-feed-for-developers'));
 	$tdf[] = array('name'=>'tdf_cache_expire','label'=>__('Cache Duration (Default 3600)','oauth-twitter-feed-for-developers'));
-  $tdf[] = array('name'=>'tdf_cache_file_location','label'=>__('Cache file location (Default This plugin\'s directory)','oauth-twitter-feed-for-developers'));
+  $tdf[] = array('name'=>'tdf_cache_file_location','label'=>__('Directory path to cache file (Default This plugin\'s directory)','oauth-twitter-feed-for-developers'));
 	$tdf[] = array('name'=>'tdf_user_timeline','label'=>__('Twitter Feed Screen Name*','oauth-twitter-feed-for-developers'));
 	return $tdf;
 }
