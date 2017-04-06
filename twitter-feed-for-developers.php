@@ -28,12 +28,12 @@ function getTweets($username = false, $count = 20, $options = false) {
   $config['token_secret'] = get_option('tdf_access_token_secret');
   $config['screenname'] = get_option('tdf_user_timeline');
   $config['cache_expire'] = intval(get_option('tdf_cache_expire'));
-  if ($config['cache_expire'] < 1) $config['cache_expire'] = 3600;
-  $config['directory'] = plugin_dir_path(__FILE__);
-  
+	if ($config['cache_expire'] < 1) $config['cache_expire'] = 3600;
+	$config['directory'] = get_option('tdf_cache_file_location');
+	if (!file_exists($config['directory'])) $config['directory'] = plugin_dir_path(__FILE__);
   $obj = new StormTwitter($config);
   $res = $obj->getTweets($username, $count, $options);
   update_option('tdf_last_error',$obj->st_last_error);
   return $res;
-  
+
 }
