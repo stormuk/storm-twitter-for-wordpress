@@ -81,6 +81,68 @@ class StormTwitter {
     
   }
   
+  function searchTweets($count = 20, $options = false) {
+
+    if ($count > 20) $count = 20;
+    if ($count < 1) $count = 1;
+
+    $default_options = array('trim_user'=>true, 'exclude_replies'=>true, 'include_rts'=>false);
+
+    if ($options === false || !is_array($options)) {
+      $options = $default_options;
+    } else {
+      $options = array_merge($default_options, $options);
+    }
+
+    $result = $this->checkValidCache("SEARCH",$options);
+
+    error_log($result);
+    if ($result !== false) {
+      return $this->cropTweets($result,$count);
+    }
+    //If we're here, we need to load.
+    $result = $this->oauthSearchTweets($options);
+    if (isset($result['errors'])) {
+      if (is_array($results) && isset($result['errors'][0]) && isset($result['errors'][0]['message'])) {
+        $last_error = $result['errors'][0]['message'];
+      } else {
+        $last_error = $result['errors'];
+      }
+      return array('error'=>'Twitter said: '.$last_error);
+    } else {
+      return $this->cropTweets($result,$count);
+    }
+  }
+  
+  function getTweetById($id) {
+    
+    $options = array("id"=>$id);
+    $result = $this->checkValidCache("ID",$options);
+      
+    if ($result !== false) {
+        return $result;
+    }
+      
+    //if we're here, we need to load.
+    $result = $this->oauthGetTweetById($options);
+      
+    if (is_array($result) && isset($result['errors'])) {
+      if (is_array($result) && isset($result['errors'][0]) && isset($result['errors'][0]['message'])) {
+        $last_error = $result['errors'][0]['message'];
+      } else {
+        $last_error = $result['errors'];
+      }
+      return array('error'=>'Twitter said: '.json_encode($last_error));
+    } else {
+      if (is_array($result)) {
+        return $result;
+      } else {
+        $last_error = 'Something went wrong with the twitter request: '.json_encode($result);
+        return array('error'=>$last_error);
+      }
+    }
+ }
+  
   private function cropTweets($result,$count) {
    if(!empty($result)){
       return array_slice($result, 0, $count); 
@@ -176,8 +238,82 @@ class StormTwitter {
         $this->st_last_error = $last_error;
       }
     }
+  }
+  
+  private function oauthSearchTweets($options){
+    $key = $this->defaults['key'];
+    $secret = $this->defaults['secret'];
+    $token = $this->defaults['token'];
+    $token_secret = $this->defaults['token_secret'];
+    $cachename = "SEARCH-".$this->getOptionsHash($options);
+    $options = array_merge($options, array('count' => 20));
+    if (empty($key)) return array('error'=>'Missing Consumer Key - Check Settings');
+    if (empty($secret)) return array('error'=>'Missing Consumer Secret - Check Settings');
+    if (empty($token)) return array('error'=>'Missing Access Token - Check Settings');
+    if (empty($token_secret)) return array('error'=>'Missing Access Token Secret - Check Settings');
+    
+    $connection = new TwitterOAuth($key, $secret, $token, $token_secret);
+    $result = $connection->get('search/tweets', $options);
+    
+    if (is_file($this->getCacheLocation())) {
+      $cache = json_decode(file_get_contents($this->getCacheLocation()),true);
+    }
+    
+    if (!isset($result['errors'])) {
+      $cache[$cachename]['time'] = time();
+      $cache[$cachename]['tweets'] = $result;
+      $file = $this->getCacheLocation();
+      file_put_contents($file,json_encode($cache));
+    } else {
+      if (is_array($results) && isset($result['errors'][0]) && isset($result['errors'][0]['message'])) {
+        $last_error = '['.date('r').'] Twitter error: '.$result['errors'][0]['message'];
+        $this->st_last_error = $last_error;
+      } else {
+        $last_error = '['.date('r').'] Twitter returned an invalid response. It is probably down.';
+        $this->st_last_error = $last_error;
+      }
+    }
     
     return $result;
-  
   }
+  
+  private function oauthGetTweetById($options) {
+    $key = $this->defaults['key'];
+    $secret = $this->defaults['secret'];
+    $token = $this->defaults['token'];
+    $token_secret = $this->defaults['token_secret'];
+    
+    $cachename = "ID-".$this->getOptionsHash($options);
+    
+    if (empty($key)) return array('error'=>'Missing Consumer Key - Check Settings');
+    if (empty($secret)) return array('error'=>'Missing Consumer Secret - Check Settings');
+    if (empty($token)) return array('error'=>'Missing Access Token - Check Settings');
+    if (empty($token_secret)) return array('error'=>'Missing Access Token Secret - Check Settings');
+    
+    $connection = new TwitterOAuth($key, $secret, $token, $token_secret);
+    $result = $connection->get('statuses/show', $options);
+    
+    if (is_file($this->getCacheLocation())) {
+      $cache = json_decode(file_get_contents($this->getCacheLocation()),true);
+    }
+    
+    if (!isset($result['errors'])) {
+      $cache[$cachename]['time'] = time();
+      $cache[$cachename]['tweets'] = $result;
+      $file = $this->getCacheLocation();
+      file_put_contents($file,json_encode($cache));
+    } else {
+      if (is_array($results) && isset($result['errors'][0]) && isset($result['errors'][0]['message'])) {
+        $last_error = '['.date('r').'] Twitter error: '.$result['errors'][0]['message'];
+        $this->st_last_error = $last_error;
+      } else {
+        $last_error = '['.date('r').'] Twitter returned an invalid response. It is probably down.';
+        $this->st_last_error = $last_error;
+      }
+    }
+    
+    return $result;
+    
+  }
+  
 }
